@@ -144,7 +144,7 @@ namespace SpectrumImager
                 for (double x = 0; x < (fft_values.Length * h); x += h)
                 {
                     pointList.Add(x, Complex.Abs(fft_values[iterator]));
-                    iterator++;
+                    if (iterator < fft_values.Length - 1) iterator++;
                 }
                 // Установить поля вывода графика масштаб по умолчанию
                 imager.ZoomOutAll(imager.GraphPane);
